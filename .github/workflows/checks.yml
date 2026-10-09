@@ -1,0 +1,17 @@
+# From Arjun: basic checks that must pass before a pull request can merge.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax
+        run: python3 -m py_compile api/app.py
+      - name: JavaScript syntax
+        run: node --check frontend/server.js
