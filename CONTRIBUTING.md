@@ -2,10 +2,18 @@
 
 ## Golden rules
 1. Nobody pushes to `main`. Every change goes through a pull request.
-2. A pull request needs **1 approval** and a **green `syntax` check** before it can merge.
+2. A pull request needs a **green `syntax` check** before it can merge. Required approvals: **0** while this is a one-person repo, raised to **1** when a second reviewer joins.
 3. Never commit passwords, tokens or keys. The pre-commit hook will block them.
 4. Keep pull requests small: one change, one reason.
 5. Delete your branch after it is merged.
+
+## One-time setup after cloning
+```bash
+python3 -m pip install --user pre-commit
+pre-commit install
+```
+The hook runs on every commit. It fixes whitespace and end-of-file issues, validates YAML,
+and blocks private keys, tokens and passwords. Run `pre-commit run --all-files` to check everything.
 
 ## Branch names
 Format: `type/short-description` (lowercase, words joined with hyphens)
