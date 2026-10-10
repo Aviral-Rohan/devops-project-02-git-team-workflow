@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 MENU = [
     {"id": 1, "name": "Espresso", "price": 120},
-    {"id": 2, "name": "Cappuccino", "price": 160},
+    {"id": 2, "name": "Cappuccino", "price": 180},
     {"id": 3, "name": "Latte", "price": 170},
     {"id": 4, "name": "Cold Brew", "price": 190},
 ]
