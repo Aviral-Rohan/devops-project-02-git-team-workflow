@@ -8,7 +8,7 @@ app.get("/", async (req, res) => {
   try {
     const items = await (await fetch(`${API_URL}/menu`)).json();
     const rows = items.map((i) => `<li>${i.name} - Rs ${i.price}</li>`).join("");
-    res.send(`<h1>BrewCart</h1><ul>${rows}</ul>`);
+    res.send(`<h1>BrewCart Menu</h1><ul>${rows}</ul>`);
   } catch (err) {
     res.status(502).send("Menu service unavailable");
   }
