@@ -50,7 +50,7 @@ Examples:
 2. `git switch -c type/short-description`
 3. Commit using Conventional Commits, then `git push -u origin <branch>`
 4. Open a pull request and fill in the template
-5. Wait for the green check and one approval, then merge
+5. Wait for the green check (and the required approvals), then merge
 6. `git switch main && git pull && git branch -d <branch>`
 
 ## Releases
