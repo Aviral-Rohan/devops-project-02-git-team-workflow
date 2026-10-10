@@ -1,0 +1,15 @@
+# Runs on every `git commit`. Install once per clone: pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace      # remove spaces at line ends
+      - id: end-of-file-fixer        # every file ends with one newline
+      - id: check-yaml               # YAML files must be valid
+      - id: check-added-large-files  # block files over 500 KB
+      - id: detect-private-key       # block SSH/TLS private keys
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets           # block tokens, API keys, passwords
